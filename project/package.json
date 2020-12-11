@@ -1,17 +1,20 @@
 {
-    "name": "server",
-    "description": "s381f project",
-    "author": "lok tim jay>",
-    "version": "0.0.1",
-    "dependencies": {
-        "ejs": "*",
-        "express": "*",
-        "express-formidable": "*",
-        "mongodb": "3.6.3",
-        "nodemon": "^2.0.6"
-    },
-    "engine": "node >= 12.0.0",
-    "scripts": {
-        "start": "node server"
-    }
+  "name": "project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "*",
+    "express": "*",
+    "express-formidable": "*",
+    "mongodb": "3.6.3",
+    "nodemon": "^2.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Lok",
+  "license": "ISC"
 }
