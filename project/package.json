@@ -1,7 +1,7 @@
 {
     "name": "server",
-    "description": "EXPRESS EJS app",
-    "author": "Raymond SO <rso@ouhk.edu.hk>",
+    "description": "s381f project",
+    "author": "lok tim jay>",
     "version": "0.0.1",
     "dependencies": {
         "ejs": "*",
