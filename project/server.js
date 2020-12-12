@@ -6,6 +6,8 @@ const assert = require('assert');
 const fs = require('fs');
 const formidable = require('express-formidable');
 const mongourl = 'mongodb+srv://Lok:Lok@cluster0.x6dds.mongodb.net/project?retryWrites=true&w=majority';
+//const mongourl = 'mongodb+srv://l6s0m8:159357@cluster0.iydmd.mongodb.net/project?retryWrites=true&w=majority';
+
 const dbName = 'project';//10
 
 app.use(formidable());
