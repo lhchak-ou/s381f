@@ -185,6 +185,8 @@ const handle_change = (req, res) => {
 				else{
 					img = "p hidden";
 				}
+				req.session.lat=results.address.coord[0];
+				req.session.lon=results.address.coord[1];
 				console.log("Closed DB connection");
 				res.status(200).render('detail', {image:img, res_detail:result, res_address:[results.address], id :req.fields._id, res_grade: results.grade});
 				}
