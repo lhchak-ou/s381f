@@ -8,8 +8,8 @@ const assert = require('assert');
 const fs = require('fs');
 const url= require("url");
 const formidable = require('express-formidable');
-const mongourl = 'mongodb+srv://Lok:Lok@cluster0.x6dds.mongodb.net/project?retryWrites=true&w=majority';
-//const mongourl = 'mongodb+srv://admin:admin@cluster0.8vw8w.mongodb.net/project?retryWrites=true&w=majority';
+const mongourl = '';
+
 
 const dbName = 'project';//10
 
