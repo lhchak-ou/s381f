@@ -245,7 +245,7 @@ const handle_search = (req, res) => {
 
 const search_fun = (db, criteria, callback) => {
 	console.log(criteria);
-	let cursor = db.collection('restaurant').find({$an : criteria}, { projection: { _id: 1, name: 1} })
+	let cursor = db.collection('restaurant').find({$and : criteria}, { projection: { _id: 1, name: 1} })
 	cursor.toArray((err,docs) => {
 	//	assert.equal(null,err);
 	//	console.log(docs);
