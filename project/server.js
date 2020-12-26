@@ -151,14 +151,17 @@ const handle_change = (req, res) => {
 			criteria['name'] = req.fields.name;
 			criteria['borough'] = req.fields.borough;
 			criteria['cuisine'] = req.fields.cuisine;
+			if(req.files.sampleFile.name){
 			criteria['photo'] = req.files.sampleFile.name;
-			criteria['photo_mimetype'] = req.files.sampleFile.type;
+			criteria['photo_mimetype'] = req.files.sampleFile.type;}
 			criteria_address['street'] = req.fields.street;
 			criteria_address['building'] = req.fields.building;
 			criteria_address['zipcode'] = req.fields.zipcode;
 			criteria_address['coord'] = [req.fields.lat,req.fields.lon]
 			criteria['address'] = criteria_address;
+			if(req.files.sampleFile.name){
 			criteria['image'] = new Buffer(data).toString('base64');
+			}
 			//console.log(criteria);
 		console.log(criteria);
 	db.collection('restaurant').findOneAndUpdate(criteria_id,{ $set: criteria});
@@ -245,7 +248,7 @@ const handle_search = (req, res) => {
 
 const search_fun = (db, criteria, callback) => {
 	console.log(criteria);
-	let cursor = db.collection('restaurant').find({$and : criteria}, { projection: { _id: 1, name: 1} })
+	let cursor = db.collection('restaurant').find({$an : criteria}, { projection: { _id: 1, name: 1} })
 	cursor.toArray((err,docs) => {
 	//	assert.equal(null,err);
 	//	console.log(docs);
@@ -522,9 +525,10 @@ app.get('/change', (req,res) => {
 				else{
 					show_detail(db, criteria, (result) => {
 						client.close();
-						//console.log(result);
+						console.log(result);
 						for (results of result) {
 							
+							console.log(results.name);
 							console.log("Closed DB connection");
 							res.status(200).render('change', {res_value:result, res_address:[results.address], id :parsedURL.query._id, res_grade: results.grade, username: req.session.username});
 							}
