@@ -1,0 +1,58 @@
+<html>
+    <body>
+      <% res_detail.forEach(function(res_detail){ %>
+        <b><%= res_detail.name %></b>
+      <br><br>
+          <<%= image %>>
+         
+            <p>Borough:<%= res_detail.borough %></p>
+            <p>Cuisine:<%= res_detail.cuisine %></p>
+             
+              
+            <% res_address.forEach(function(res_address){ %>
+            <p>Street: <%= res_address.street %></p>
+            <p>Building: <%= res_address.building %> </p>
+            <p>Zipcode: <%= res_address.zipcode %></p>
+            <p>GPS: [<%= res_address.coord[1] %>,<%= res_address.coord[0] %>] </p>
+             <% }); %>
+            <p>Rating: </p>
+              <ol>
+                <% res_grade.forEach(function(res_grade) { %>
+                  <li>         
+                  <%= res_grade.score %>  (<%= res_grade.username %>)              
+                  </li>
+                  <% }); %>
+                 
+              </ol>
+            
+            <p>
+            Created by: </label><%= res_detail.creator %></p>
+            <p>
+            </p>
+            <% }); %>
+            
+
+            
+
+            <% res_detail.forEach(function(res_detail) { %>
+             
+              <% var change = '/change?_id='+ res_detail._id %> 
+              <% var remove = '/remove?_id='+ res_detail._id %> 
+              <% var rate = '/rate?_id='+ res_detail._id + '&name=' + res_detail.name %> 
+              <a href= <%= rate %>>Rate</a>  <a href= <%= change %>>Edit</a>  <a href= <%= remove %>>Delete</a> 
+                  
+      
+              <% }); %>
+              <br>
+
+              <p><a href="/map">map</a></p>
+    
+
+        
+        <p><a href="/">home</a></p> 
+        <form action="/logout" method="POST">
+            <input type="submit" value="logout">
+            </form>
+    </body>
+</html>
+

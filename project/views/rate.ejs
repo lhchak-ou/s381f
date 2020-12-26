@@ -1,0 +1,18 @@
+<html>
+    <body>
+      
+            <h2>Rate</h2>
+            <form class="w3-container" action="/rate_f" method="post">
+                <input type="hidden" name="_id" value= <%= id %> >
+                <input type="hidden" name="username" value=<%= username %>>
+                <label>Score (1-10):</label>
+                <input class="w3-input" type="number" name="score" min="1" max="10">
+                <input type="submit" value="Rate">
+               
+              </form>
+        <p><a href="/">home</a></p>
+        <form action="/logout" method="POST">
+            <input type="submit" value="logout">
+    </body>
+</html>
+

@@ -3,9 +3,8 @@
     <head>
 
     </head>
-<h1>hi : <%= message %></h1>
 <p id="demo" ></p>
-<p>Here is the restaurant list and we have <%= noofres %> restaurants. <button onclick="location.href = '/search_page';">Search restaurants</button>
+<p>we have <%= noofres %> restaurants fit your finding</p>
 
 <script type='text/javascript'>
 
@@ -22,10 +21,12 @@
         <% }); %>
 </ul>
 </form>
+<p>If you can't find you restaurant, you can create your own restaurant by clicking the button below.</p>
 <form action="/insertres_page" method="get">
     <input type="submit" value="Create new restaurant">
 </form>
 
+<p><a href="/">home</a></p> 
 <form action="/logout" method="POST">
     <input type="submit" value="logout">
 
